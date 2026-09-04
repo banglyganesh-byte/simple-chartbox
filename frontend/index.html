@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simple Chartbox</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+
+            <div class="logo">📊</div>
+
+            <h1>Simple Chartbox</h1>
+
+            <p>
+                Turn your data into clear and meaningful visualizations.
+            </p>
+
+            <span class="tagline">
+                Upload • Analyze • Visualize • Understand
+            </span>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- 1. Upload CSV -->
+        <section class="card">
+
+            <h2>1. Upload CSV</h2>
+
+            <input
+                type="file"
+                id="csvFile"
+                accept=".csv"
+            >
+
+            <div id="fileName"></div>
+
+            <div id="loadingMessage"></div>
+
+        </section>
+
+
+        <!-- 2. Preview Data -->
+        <section class="card">
+
+            <h2>2. Preview Data</h2>
+
+            <div id="tableContainer">
+
+                <p>
+                    Upload a CSV file to preview your data.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- 3. Data Insights -->
+        <section class="card">
+
+            <h2>3. Data Insights</h2>
+
+            <div id="dataInsights">
+
+                <p>
+                    Upload a CSV file to see data insights.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- 4. Performance Analysis -->
+        <section class="card">
+
+            <h2>4. Performance Analysis</h2>
+
+            <div id="performanceAnalysis">
+
+                <p>
+                    Upload a CSV file to see performance analysis.
+                </p>
+
+            </div>
+
+            <canvas id="performanceChart"></canvas>
+
+        </section>
+
+
+        <!-- 5. Class-wise Analysis -->
+        <section class="card">
+
+            <h2>5. Class-wise Analysis</h2>
+
+            <div id="classAnalysis">
+
+                <p>
+                    Upload a CSV file to see class-wise analysis.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- 6. AI Data Insights -->
+        <section class="card">
+
+            <h2>6. AI Data Insights 🤖</h2>
+
+            <div id="aiInsights">
+
+                <p>
+                    Upload a CSV file to get AI-powered insights.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- 7. Data Quality -->
+        <section class="card">
+
+            <h2>7. Data Quality Check</h2>
+
+            <div id="dataQuality">
+
+                <p>
+                    Upload a CSV file to check data quality.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- 8. Create Your Chart -->
+        <section class="card">
+
+            <h2>8. Create Your Chart</h2>
+
+            <div class="controls">
+
+
+                <!-- X Axis -->
+                <div class="control-group">
+
+                    <label for="xColumn">
+                        X-Axis
+                    </label>
+
+                    <select id="xColumn">
+
+                        <option value="">
+                            Select X-Axis
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Y Axis -->
+                <div class="control-group">
+
+                    <label for="yColumn">
+                        Y-Axis
+                    </label>
+
+                    <select id="yColumn">
+
+                        <option value="">
+                            Select Y-Axis
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Group By -->
+                <div class="control-group">
+
+                    <label for="groupColumn">
+                        Group By
+                    </label>
+
+                    <select id="groupColumn">
+
+                        <option value="">
+                            No Grouping
+                        </option>
+
+                    </select>
+
+                    <small>
+                        Generate separate charts for each group.
+                    </small>
+
+                </div>
+
+
+                <!-- Chart Type -->
+                <div class="control-group">
+
+                    <label for="chartType">
+                        Chart Type
+                    </label>
+
+                    <select id="chartType">
+
+                        <option value="bar">
+                            Bar Chart
+                        </option>
+
+                        <option value="line">
+                            Line Chart
+                        </option>
+
+                        <option value="pie">
+                            Pie Chart
+                        </option>
+
+                        <option value="scatter">
+                            Scatter Plot
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Chart Title -->
+                <div class="control-group">
+
+                    <label for="chartTitle">
+                        Chart Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="chartTitle"
+                        placeholder="Enter chart title"
+                    >
+
+                </div>
+
+
+                <!-- X Axis Label -->
+                <div class="control-group">
+
+                    <label for="xAxisLabel">
+                        X-Axis Label
+                    </label>
+
+                    <input
+                        type="text"
+                        id="xAxisLabel"
+                        placeholder="Enter X-axis label"
+                    >
+
+                </div>
+
+
+                <!-- Y Axis Label -->
+                <div class="control-group">
+
+                    <label for="yAxisLabel">
+                        Y-Axis Label
+                    </label>
+
+                    <input
+                        type="text"
+                        id="yAxisLabel"
+                        placeholder="Enter Y-axis label"
+                    >
+
+                </div>
+
+
+                <!-- Chart Color -->
+                <div class="control-group">
+
+                    <label for="chartColor">
+                        Chart Color
+                    </label>
+
+                    <input
+                        type="color"
+                        id="chartColor"
+                        value="#4f46e5"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button id="generateBtn">
+                Generate Chart
+            </button>
+
+        </section>
+
+
+        <!-- AI Chart Recommendation -->
+        <section class="card">
+
+            <h2>
+                Smart Chart Recommendation 🤖
+            </h2>
+
+            <div id="aiRecommendation">
+
+                <p>
+                    Upload a CSV file to get an AI chart recommendation.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- 9. Your Chart -->
+        <section class="card">
+
+            <h2>9. Your Chart</h2>
+
+            <div id="chartPlaceholder">
+
+                <p>
+                    Your generated chart will appear here.
+                </p>
+
+            </div>
+
+            <div id="chartContainer">
+
+                <canvas id="chart"></canvas>
+
+            </div>
+
+            <button id="downloadBtn">
+                Download PNG
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            Simple Chartbox © 2026
+        </p>
+
+        <p>
+            Upload • Analyze • Visualize • Understand
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
