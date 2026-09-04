@@ -4,7 +4,7 @@
 
 A beginner-friendly web application that allows users to upload CSV data, analyze it, and create meaningful visualizations without requiring advanced data visualization knowledge.
 
----
+![Simple Chartbox](simple%20chartbox.png)
 
 ## 🚀 Features
 
