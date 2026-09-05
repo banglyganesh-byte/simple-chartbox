@@ -1,3 +1,4 @@
+
 let csvData = [];
 let chartInstance = null;
 let performanceChartInstance = null;
@@ -866,7 +867,7 @@ function sendToBackend(file) {
 
 
     fetch(
-        "http://127.0.0.1:5000/api/analyze",
+        "https://simple-chartbox.onrender.com/api/analyze",
         {
             method: "POST",
             body: formData
@@ -918,7 +919,7 @@ function sendForAIInsights(file) {
 
 
     fetch(
-        "http://127.0.0.1:5000/api/ai-insights",
+    "https://simple-chartbox.onrender.com/api/ai-insights",
         {
             method: "POST",
             body: formData
@@ -1014,7 +1015,7 @@ function sendForAIRecommendation(file) {
 
 
     fetch(
-        "http://127.0.0.1:5000/api/ai-recommendation",
+        "https://simple-chartbox.onrender.com/api/ai-recommendation",
         {
             method: "POST",
             body: formData
@@ -1545,9 +1546,7 @@ function generateGroupedCharts(
 // DOWNLOAD PNG
 // ========================================
 
-document
-    .getElementById("downloadBtn")
-    .addEventListener(
+document.getElementById("downloadBtn").addEventListener(
         "click",
         function () {
 
@@ -1618,4 +1617,3 @@ document
 
         }
     );
-

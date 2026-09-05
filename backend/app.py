@@ -280,14 +280,15 @@ def generate_gemini_response(prompt):
     )
 
     if not response.ok:
-     print("Gemini API error:", response.status_code)
-     print("Gemini API response:", response.text)
-     raise Exception(
-        "Gemini API error: "
-        + str(response.status_code)
-        + " "
-        + response.text
-    )
+        print("Gemini API error:", response.status_code)
+        print("Gemini API response:", response.text)
+
+        raise Exception(
+            "Gemini API error: "
+            + str(response.status_code)
+            + " "
+            + response.text
+        )
 
     result = response.json()
 
@@ -306,8 +307,6 @@ def generate_gemini_response(prompt):
         "text",
         "AI could not generate a response."
     ).strip()
-
-
 @app.route("/api/ai-insights", methods=["POST"])
 def ai_insights():
     try:
