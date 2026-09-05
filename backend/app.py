@@ -17,7 +17,7 @@ def generate_gemini_response(prompt):
         raise Exception("GEMINI_API_KEY is not configured.")
 
     response = requests.post(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key="
         + api_key,
         json={
             "contents": [
