@@ -867,7 +867,7 @@ function sendToBackend(file) {
 
 
     fetch(
-        "https://simple-chartbox.onrender.com/api/analyze",
+       "http://127.0.0.1:5000/api/ai-recommendation",
         {
             method: "POST",
             body: formData
@@ -919,7 +919,7 @@ function sendForAIInsights(file) {
 
 
     fetch(
-    "https://simple-chartbox.onrender.com/api/ai-insights",
+        "http://127.0.0.1:5000/api/ai-insights",
         {
             method: "POST",
             body: formData
@@ -1015,7 +1015,7 @@ function sendForAIRecommendation(file) {
 
 
     fetch(
-        "https://simple-chartbox.onrender.com/api/ai-recommendation",
+        "http://127.0.0.1:5000/api/ai-recommendation",
         {
             method: "POST",
             body: formData
