@@ -279,7 +279,15 @@ def generate_gemini_response(prompt):
         timeout=120
     )
 
-    response.raise_for_status()
+    if not response.ok:
+     print("Gemini API error:", response.status_code)
+     print("Gemini API response:", response.text)
+     raise Exception(
+        "Gemini API error: "
+        + str(response.status_code)
+        + " "
+        + response.text
+    )
 
     result = response.json()
 
