@@ -1,4 +1,3 @@
-
 let csvData = [];
 let chartInstance = null;
 let performanceChartInstance = null;
